@@ -1,6 +1,9 @@
 import React from "react";
 
 export default function SearchList({ userList }) {
+  const margin={
+    marginTop:"-2%"
+  }
   return (
       <div className="row mt-4">
         {userList?.map((x, i) => {
@@ -17,6 +20,7 @@ export default function SearchList({ userList }) {
                             alt="card image"
                           />
                         </p>
+
                         <h4 className="card-title">Username : {x.login}</h4>
                       </div>
                     </div>
@@ -31,12 +35,15 @@ export default function SearchList({ userList }) {
                             alt="card image"
                           />
                         </p>
-                        <p className="card-title">Username : {x.login}</p>
-                        <p className="card-title">Score : {x.score}</p>
-                        <p className="card-title">Type : {x.type}</p>
-                        <p className="card-title">Profile : {x.html_url}</p>
-                        <p className="card-title">Repository : {x.repos_url}</p>
+                        <div style={{height:"300px"}}>
 
+                        <p className="card-title">Username : {x.login}</p>
+                        <p className="card-title" style={margin}>Score : {x.score}</p>
+                        <p className="card-title" style={margin}>Type : {x.type}</p>
+                        <p className="card-title" style={margin}>Profile : {x.html_url}</p>
+                        <p className="card-title" style={margin}>Repository : {x.repos_url}</p>
+
+                        </div>
                       </div>
                     </div>
                   </div>

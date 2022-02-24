@@ -20,6 +20,8 @@ export default function Search() {
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = React.useState(!localStorage.getItem('onboarding')?true:false);
 
+  console.log(totalPages)
+  console.log(page)
 
   const handleClose = () => {
     setOpen(false);
@@ -34,7 +36,7 @@ export default function Search() {
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
-        setTotalPages(Math.round(res.total_count / 30));
+        setTotalPages(Math.round(res.total_count -30));
         setUserList([...res.items]);
         setLoading(false);
       });
@@ -48,7 +50,7 @@ export default function Search() {
       .then((res) => res.json())
       .then((res) => {
         setUserList([...userList, ...res.items]);
-        setTotalPages(Math.round(totalPages / 30));
+        setTotalPages(Math.round(totalPages - 30));
         setLoading(false);
       });
   };
@@ -108,10 +110,10 @@ export default function Search() {
             <SearchIcon />
           </IconButton>
         </Paper>
-        {userList.length== 0? <div style={{position:"absolute"}}>No Data</div>:  <SearchList userList={userList} />}
+       <SearchList userList={userList} />
 
         <div className="clearfix"></div>
-        {totalPages !== page && (
+        {totalPages >=31 && (
           <Button
             variant="contained"
             onClick={() => setPageControl(page)}
