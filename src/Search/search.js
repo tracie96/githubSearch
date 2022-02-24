@@ -9,6 +9,7 @@ import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
+import FormControl from '@mui/material/FormControl';
 
 import "./searchlist.css";
 
@@ -28,6 +29,7 @@ export default function Search() {
     localStorage.setItem("onboarding", 'false');
 
   };
+  
 
   const getUserList = (e) => {
     e.preventDefault();
@@ -56,6 +58,7 @@ export default function Search() {
   };
 
   return (
+    
     <section id="team" className="">
       <div className="container">
         <Dialog
@@ -87,11 +90,11 @@ export default function Search() {
             p: "2px 4px",
             display: "flex",
             alignItems: "center",
-            width: 400,
             margin: "auto",
             position: "relative",
           }}
         >
+
           <InputBase
             sx={{ ml: 1, flex: 1 }}
             name={textInput}

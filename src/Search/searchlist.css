@@ -5,7 +5,9 @@
     background: url("https://cdn.neow.in/news/images/uploaded/2021/04/1619644762_github-desktop_story.jpg");
     height: 100%;
 }
-
+.css-n72edq-MuiPaper-root{
+    width:"1000%"}
+  
 .btn-primary:hover,
 .btn-primary:focus {
     background-color: #108d6f;
